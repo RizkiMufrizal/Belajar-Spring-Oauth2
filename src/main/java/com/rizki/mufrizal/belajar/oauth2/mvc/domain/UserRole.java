@@ -31,7 +31,7 @@ public class UserRole implements Serializable{
 
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
-    @JoinColumn(name = "username")
+    @JoinColumn(name = "username", nullable = false)
     private User user;
 
     public String getIdCustomerRole() {
