@@ -35,8 +35,8 @@ public class User implements Serializable{
     @Column(name = "enable", columnDefinition = "TINYINT")
     private boolean enable;
     
-    @OneToMany(fetch = FetchType.LAZY)
-    @Cascade({CascadeType.ALL})
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    @Cascade({CascadeType.SAVE_UPDATE, CascadeType.DELETE})
     private Set<UserRole> userRoles = new HashSet<UserRole>();
 
     public String getUsername() {
