@@ -50,7 +50,7 @@ public class Oauth2SecurityConfig {
 
     @Configuration
     @EnableResourceServer
-    private static class AuhorizationServerConfiguration extends AuthorizationServerConfigurerAdapter {
+    protected static class AuhorizationServerConfiguration extends AuthorizationServerConfigurerAdapter {
 
         private TokenStore tokenStore = new InMemoryTokenStore();
 
