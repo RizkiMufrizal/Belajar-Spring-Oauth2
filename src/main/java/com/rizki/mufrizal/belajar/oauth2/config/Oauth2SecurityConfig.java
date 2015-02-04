@@ -41,7 +41,7 @@ public class Oauth2SecurityConfig {
         public void configure(HttpSecurity httpSecurity) throws Exception {
             httpSecurity
                     .authorizeRequests()
-                    .antMatchers("/", "/hello").permitAll()
+                    .antMatchers("/admin").authenticated()
                     .and()
                     .addFilterBefore(new CORSFilter(), ChannelProcessingFilter.class);
         }
