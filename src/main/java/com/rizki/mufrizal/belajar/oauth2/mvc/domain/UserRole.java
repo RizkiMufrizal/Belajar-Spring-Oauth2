@@ -18,7 +18,7 @@ import java.io.Serializable;
         }
 )
 @JsonAutoDetect
-public class UserRole implements Serializable{
+public class UserRole implements Serializable {
 
     @Id
     @GeneratedValue(generator = "system-uuid")
