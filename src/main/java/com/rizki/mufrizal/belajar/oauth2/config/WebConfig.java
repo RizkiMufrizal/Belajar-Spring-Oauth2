@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EntityScan(basePackages = {"com.rizki.mufrizal.belajar.oauth2.mvc.domain"})
 @EnableAutoConfiguration
-//@Import(WebSecurityConfig.class)
+@Import(value = {WebSecurityConfig.class, Oauth2SecurityConfig.class})
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = {"com.rizki.mufrizal.belajar.oauth2.mvc.repository"})
 @ComponentScan(basePackages = {"com.rizki.mufrizal.belajar.oauth2"})
