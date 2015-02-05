@@ -9,6 +9,7 @@ Teknologi yang digunakan :
 * Spring Oauth2
 * MariaDB
 * Jackson
+* Gson
 * Tomcat 8
 * Gradle
 
@@ -20,6 +21,16 @@ aplikasi ini berjalan di Port 8888, portnya dapat diganti di dalam file applicat
 aplikasi ini stand by pada url : http://localhost:8888/user
 
 Langkah - Langkah menggunakannya :
+
+* buat user terlebih dahulu, silahkan gunakan aplikasi curl untuk post json dengan perintah berikut :
+  
+   curl -H "Accept: application/json" -H "Content-type: application/json" -d '{"username":"admin","password":"admin"}' http://localhost:8888/user
+     
+   kita akan save data user dengan username admin dan password admin jika berhasil maka akan tampil pesan :
+   
+   {
+        "Success":"Data Tersimpan"
+   }   
 
 * Disini kita menggunakan aplikasi command line curl untuk menguji dan menukar akses token
   adapun perintahnya adalah 
@@ -37,7 +48,7 @@ Langkah - Langkah menggunakannya :
 
 * untuk dapat melakukan akses ke url tersebut maka kita harus request token terlebih dahulu, tuliskan sintak berikut :
     
-   curl -X POST -vu clientapp:123456 http://localhost:8888/oauth/token -H "Accept: application/json" -d "password=12345&username=rizki&grant_type=password&scope=read&write&client_secret=123456&client_id=clientapp"
+   curl -X POST -vu clientapp:123456 http://localhost:8888/oauth/token -H "Accept: application/json" -d "password=admin&username=admin&grant_type=password&scope=read&write&client_secret=123456&client_id=clientapp"
      
    sintak diatas kita akan melakukan post ke authorization servernya dengan content typenya application/json, disana kita mengirim password dan username kita yang nantinya akan di encoding menjadi base64 untuk
    clientapp adalah sebagai salah satu client yang kita daftarkan ke authorization server, authorization server dapat memberikan hak akses tulis, membaca kepada client yang telah di daftarkan
