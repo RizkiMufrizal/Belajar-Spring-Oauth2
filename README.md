@@ -74,14 +74,14 @@ Langkah - Langkah menggunakannya :
   ```json
   [ 
     {
-        "username":"rizki",
-        "password":"$2a$08$LOUVLE2yC5SNm/tHGGb5zuh.wziqZT8AzKrqVyi8S7vk/i4TUM3Iq",
+        "username":"admin",
+        "password":"$2a$10$AQtHkNEhk12kceU3uSTS3uoMyQY82bwqR1OVGNobI86Se0doPBh/S",
         "enable":true,
         "userRoles":[
-                {
-                    "idCustomerRole":"1",
-                    "role":"ROLE_ADMIN"
-                }
+            {
+               "idCustomerRole":"ff8081814b58d9ae014b58dbff640001",
+               "role":"ROLE_USER"
+            }
       ]
     }
   ]
