@@ -1,6 +1,5 @@
 package com.rizki.mufrizal.belajar.oauth2.mvc.domain;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
 
@@ -19,7 +18,6 @@ import java.util.Set;
                 @Index(columnList = "username", name = "username")
         }
 )
-@JsonAutoDetect
 public class User implements Serializable {
 
     @Id
@@ -30,9 +28,9 @@ public class User implements Serializable {
     private String password;
 
     @Column(name = "enable", columnDefinition = "TINYINT")
-    private boolean enable = true;
+    private Boolean enable = true;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = javax.persistence.CascadeType.ALL)
     @Cascade({CascadeType.SAVE_UPDATE, CascadeType.DELETE})
     private Set<UserRole> userRoles = new HashSet<UserRole>();
 
@@ -52,11 +50,11 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public boolean isEnable() {
+    public Boolean isEnable() {
         return enable;
     }
 
-    public void setEnable(boolean enable) {
+    public void setEnable(Boolean enable) {
         this.enable = enable;
     }
 
