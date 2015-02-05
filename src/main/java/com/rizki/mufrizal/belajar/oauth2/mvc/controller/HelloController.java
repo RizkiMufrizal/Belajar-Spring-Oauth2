@@ -24,7 +24,7 @@ public class HelloController {
     }
 
     @Secured({"ROLE_USER"})
-    @RequestMapping(value = "/user", method = RequestMethod.GET)
+    @RequestMapping(value = "/userPage", method = RequestMethod.GET)
     public String user() {
         return "user page";
     }
