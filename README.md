@@ -23,10 +23,12 @@ aplikasi ini stand by pada url : `http://localhost:8888`
 Langkah - Langkah menggunakannya :
 
 * buat user terlebih dahulu, silahkan gunakan aplikasi curl untuk post json dengan perintah berikut :
+   
    ```sh
    curl -H "Accept: application/json" -H "Content-type: application/json" -d '{"username":"admin","password":"admin"}' http://localhost:8888/user
    ```
    kita akan save data user dengan username admin dan password admin jika berhasil maka akan tampil pesan :
+   
    ```json
    {
         "Success":"Data Tersimpan"
