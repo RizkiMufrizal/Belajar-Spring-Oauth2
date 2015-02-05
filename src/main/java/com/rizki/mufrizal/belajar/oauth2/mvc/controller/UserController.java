@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -34,9 +35,14 @@ public class UserController {
     @ResponseBody
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(value = "/user", method = RequestMethod.POST)
-    public void saveUser(@RequestBody String json){
+    public HashMap<String, Object> saveUser(@RequestBody String json){
         User user = gson.fromJson(json, User.class);
         userService.save(user);
+
+        HashMap<String, Object> message = new HashMap<String, Object>();
+        message.put("Success", "Data Tersimpan");
+        
+        return message;
     }
     
 }
