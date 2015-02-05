@@ -1,9 +1,12 @@
 package com.rizki.mufrizal.belajar.oauth2.mvc.controller;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.rizki.mufrizal.belajar.oauth2.mvc.domain.User;
 import com.rizki.mufrizal.belajar.oauth2.mvc.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,6 +21,8 @@ public class UserController {
     
     @Autowired
     private UserService userService;
+    
+    private Gson gson = new GsonBuilder().create();
 
     @Secured({"ROLE_USER", "ROLE_ADMIN"})
     @ResponseBody
@@ -30,7 +35,8 @@ public class UserController {
     @ResponseBody
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(value = "/user", method = RequestMethod.POST)
-    public void saveUser(@RequestBody User user){
+    public void saveUser(@RequestBody String json){
+        User user = gson.fromJson(json, User.class);
         userService.save(user);
     }
     
