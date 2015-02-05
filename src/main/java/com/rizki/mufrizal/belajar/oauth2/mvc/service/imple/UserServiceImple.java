@@ -28,7 +28,7 @@ public class UserServiceImple implements UserService {
     @Override
     public void save(User user) {
         
-        //enkripsi password
+        //Hash password
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
 
