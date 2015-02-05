@@ -18,7 +18,8 @@ public class UserController {
     
     @Autowired
     private UserService userService;
-    
+
+    @Secured({"ROLE_USER", "ROLE_ADMIN"})
     @ResponseBody
     @ResponseStatus(HttpStatus.OK)
     @RequestMapping(value = "/user", method = RequestMethod.GET)
@@ -26,7 +27,6 @@ public class UserController {
         return userService.getUserList();
     }
     
-    @Secured({"ROLE_USER"})
     @ResponseBody
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(value = "/user", method = RequestMethod.POST)
