@@ -30,7 +30,7 @@ public class User implements Serializable {
     private String password;
 
     @Column(name = "enable", columnDefinition = "TINYINT")
-    private boolean enable;
+    private boolean enable = true;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
     @Cascade({CascadeType.SAVE_UPDATE, CascadeType.DELETE})
