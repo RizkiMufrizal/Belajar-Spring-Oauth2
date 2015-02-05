@@ -28,7 +28,7 @@ public class UserController {
     
     @Secured({"ROLE_USER"})
     @ResponseBody
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(value = "/user", method = RequestMethod.POST)
     public void saveUser(@RequestBody User user){
         userService.save(user);
