@@ -15,7 +15,7 @@ Teknologi yang digunakan :
 
 Cara Menjalankannya :
 
-`Gradle clean build bootRun`
+`gradle clean build bootRun`
 
 aplikasi ini berjalan di Port 8888, portnya dapat diganti di dalam file `application.yml`
 aplikasi ini stand by pada url : `http://localhost:8888`
