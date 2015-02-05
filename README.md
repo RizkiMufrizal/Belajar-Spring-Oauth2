@@ -77,13 +77,12 @@ Langkah - Langkah menggunakannya :
         "username":"rizki",
         "password":"$2a$08$LOUVLE2yC5SNm/tHGGb5zuh.wziqZT8AzKrqVyi8S7vk/i4TUM3Iq",
         "enable":true,
-        "userRoles":
-            [
+        "userRoles":[
                 {
                     "idCustomerRole":"1",
                     "role":"ROLE_ADMIN"
                 }
-            ]
+      ]
     }
   ]
 ```
