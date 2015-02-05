@@ -68,8 +68,10 @@ Langkah - Langkah menggunakannya :
    }
    ```
 * langkah selanjutnya ambil access token tadi lalu lakukan request kembali ke resource dengan sintak :
-  `curl http://localhost:8888/user -H "Authorization: Bearer 14a065d8-ac74-4435-b322-71c891ca58bb"`
-  
+	
+  ```sh
+  curl http://localhost:8888/user -H "Authorization: Bearer 14a065d8-ac74-4435-b322-71c891ca58bb"
+  ```
   jika berhasil maka akan tampil seperti ini yang menandakan anda telah dapat mengakses resource/API :
   ```json
   [ 
