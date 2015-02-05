@@ -18,7 +18,7 @@ Cara Menjalankannya :
 `Gradle clean build bootRun`
 
 aplikasi ini berjalan di Port 8888, portnya dapat diganti di dalam file `application.yml`
-aplikasi ini stand by pada url : `http://localhost:8888/user`
+aplikasi ini stand by pada url : `http://localhost:8888`
 
 Langkah - Langkah menggunakannya :
 
